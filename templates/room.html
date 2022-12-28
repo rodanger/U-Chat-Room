@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=NTR&display=swap" rel="stylesheet"> 
 
-<style>
+<style> 
 
     body{
 
@@ -85,16 +86,21 @@
     </head>
     <body>
 
-   <br> <h2>{{room}} - DjChat</h2>
+        <br><br><br>
+        <div align="center">
+            <img src="{% static 'img/chat.png' %}" width="75px"> <!--Image logo-->
+            <h2>{{room}} - U Chat Room </h2> <!-- Name the room-->
+        </div>
+
+      <!---->
+      
+        <div id="display">
     
-    <div id="display">
+        <!--Welcome To Your Room-->
+    
+        </div>
 
-    <!-- <div class="container darker">
-      <b>Tom</b><p>Hello Everyone, How Are You Guys Doing?</p>
-      <span class="time-left">20th, April 2021</span>
-    </div> -->
-
-    </div>
+      <!--End-->
 
     <script>
 
@@ -122,7 +128,7 @@
 })
 </script>
 
-<div class="container">
+<div class="container"> <!--Container CSS for room -->
     <style>
     input[type=text], select {
     width: 100%;
@@ -158,10 +164,10 @@
 
 <form id="post-form">
     {% csrf_token %}
-    <input type="hidden" name="username" id="username" value="{{username}}"/>
-    <input type="hidden" name="room_id" id="room_id" value="{{room_details.id}}"/>
-    <input type="text" name="message" id="message" width="100px" />
-    <input type="submit" value="Send">
+    <input type="hidden" name="username" id="username" value="{{username}}"/> <!-- Username -->
+    <input type="hidden" name="room_id" id="room_id" value="{{room_details.id}}"/> <!-- ID of the Room-->
+    <input type="text" name="message" id="message" width="100px" /> <!-- Message -->
+    <input type="submit" value="Send"> <!-- Send message button -->
 </form>
 </div>
 
